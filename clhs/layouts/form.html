@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#024e7d">
+<title>Банк &laquo;КЛІРИНГОВИЙ ДІМ&raquo; &mdash; Анкета</title>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,700i,900&amp;subset=cyrillic" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!--HEADER-->
+<header class="site-header">
+	<!--***-->
+    <div class="logo"><a href="#"><img src="img/logo.png" alt=""></a></div>
+    <!--***-->
+	<nav class="header__nav">
+		<ul class="header__menu">
+			<li><a href="#">Про банк</a></li>
+			<li><a href="#">Вимоги до позичальника</a></li>
+			<li><a href="#">Як оформити кредит</a></li>
+			<li><a href="#">Як погасити кредит</a></li>
+		</ul>
+		<ul class="lang__menu">
+			<li>Укр</li>
+			<li><a href="#">Рус</a></li>
+		</ul>
+	</nav>
+    <!--***-->
+	<div class="header__user">
+		<a href="#" class="user__enter"></a>
+	</div>
+	<!--***-->
+	<i class="mob-nav"></i>
+	<!--***-->
+</header>
+<!--/HEADER-->
+	
+<!--MIDDLE-->
+<div class="site-content">
+    <!--***-->
+	<div class="content__head">
+    	<h1 class="content__title">Ваше замовлення</h1>
+	</div>
+	<!--***-->
+    <div class="form">
+		<!--**-->
+    	<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_name" class="form__label required">Ім&#039;я</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_name" name="orders[name]" required="required" class="form__input" name="name" placeholder="Введіть ваше ім’я" />
+			</div>
+		</div>
+        <!--**-->
+        <div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_surname" class="form__label required">Прізвище</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_surname" name="orders[surname]" required="required" class="form__input" placeholder="Введіть ваше прізвище" />
+			</div>
+		</div>
+        <!--**-->
+        <div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_middlename" class="form__label required">По-батькові</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_middlename" name="orders[middlename]" required="required" class="form__input" placeholder="Введіть ваше по-батькові" />
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+            	<label class="form__label required">Стать</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="radio" class="form__radio" id="gender_1" name="gender">
+                <label class="radio__label radio_float" for="gender_1">Чоловіча</label>
+				<input type="radio" class="form__radio" id="gender_2" name="gender">
+                <label class="radio__label radio_float" for="gender_2">Жіноча</label>
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+            	<label class="form__label">Дата народження</label>
+			</div>
+			<div class="form__cell cell_input cell_date">
+            	<input class="form__input input_day" type="text" required="required" placeholder="День">
+				<select class="form__select select_month select" required="required">
+					<option>Місяць</option>
+					<option>Січень</option>
+					<option>Лютий</option>
+					<option>Березень</option>
+					<option>Квітень</option>
+					<option>Ьравень</option>
+					<option>Червень</option>
+					<option>Липень</option>
+					<option>Серпень</option>
+					<option>Вересень</option>
+					<option>Жовтень</option>
+					<option>Листопад</option>
+					<option>Грудень</option>
+				</select>
+				<input class="form__input input_year" type="text" required="required" placeholder="Год">
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row row_err">
+			<div class="form__cell cell_label">
+				<label for="orders_ipn" class="form__label required">ІПН</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_ipn" name="orders[ipn]" required="required" class="form__input" placeholder="Введіть ваш ІПН" />
+				<span class="form__note">Перевірте правильність введення</span>
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label class="form__label required">Паспорт / Карт ID</label>
+			</div>
+			<div class="form__cell cell_input" id="orders_is_passport">				
+				<input type="radio" id="orders_is_passport_0" name="orders[is_passport]" required="required" value="passport" class="form__radio" />
+				<label for="orders_is_passport_0" class="radio__label radio_float radio_passport required">Паспорт</label>
+				<input type="radio" id="orders_is_passport_1" name="orders[is_passport]" required="required" value="cart_id" class="form__radio" />
+				<label for="orders_is_passport_1" class="radio__label radio_float radio_passport required">Карт ID</label>
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row row_passport">
+			<div class="form__cell cell_label">
+				<label for="orders_passport_seria" class="form__label required">Серія паспорту</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_passport_seria" name="orders[passport_seria]" required="required" class="form__input" placeholder="Введіть серію паспорту" />
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row row_passport">
+			<div class="form__cell cell_label">
+				<label for="orders_passport_id" class="form__label required">Номер паспорту</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_passport_id" name="orders[passport_id]" required="required" class="form__input" placeholder="Введіть номер паспорт" />
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row row_cart_id">
+			<div class="form__cell cell_label">
+				<label for="orders_cart_id" class="form__label required">Картка ID</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_cart_id" name="orders[cart_id]" required="required" class="form__input" placeholder="Введіть ваш ID" />
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_place" class="form__label required">Місце</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_place" name="orders[place]" required="required" class="form__input" placeholder="Введіть місце" />
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_area" class="form__label required">Область</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select id="orders_area" name="orders[area]" required="required" class="select">
+					<option value="" selected="selected">Виберіть зі списку</option>
+					<option value="Вінницька">Вінницька</option>
+					<option value="Волинська">Волинська</option>
+					<option value="Дніпропетровська">Дніпропетровська</option>
+					<option value="Донецька">Донецька</option>
+					<option value="Житомирська">Житомирська</option>
+					<option value="Закарпатська">Закарпатська</option>
+					<option value="Запорізька">Запорізька</option>
+					<option value="Івано-Франківська">Івано-Франківська</option>
+					<option value="Київська">Київська</option>
+					<option value="Кіровоградська">Кіровоградська</option>
+					<option value="Луганська">Луганська</option>
+					<option value="Львівська">Львівська</option>
+					<option value="Миколаївська">Миколаївська</option>
+					<option value="Одеська">Одеська</option>
+					<option value="Полтавська">Полтавська</option>
+					<option value="Рівненська">Рівненська</option>
+					<option value="Сумська">Сумська</option>
+					<option value="Тернопільська">Тернопільська</option>
+					<option value="Харківська">Харківська</option>
+					<option value="Херсонська">Херсонська</option>
+					<option value="Хмельницька">Хмельницька</option>
+					<option value="Черкаська">Черкаська</option>
+					<option value="Чернігівська">Чернігівська</option>
+					<option value="Чернівецька">Чернівецька</option>
+				</select>
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_employment" class="form__label required">Посада</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select id="orders_employment" name="orders[employment]" required="required" class="select">
+					<option value="" selected="selected">Виберіть зі списку</option>
+					<option value="Офіційно працевлаштований">Офіційно працевлаштований</option>
+					<option value="Неофіційно працевлаштований">Неофіційно працевлаштований</option>
+					<option value="Підприємець (ФОП)">Підприємець (ФОП)</option>
+					<option value="Пенсіонер">Пенсіонер</option>
+					<option value="Студент">Студент</option>
+					<option value="Декрет">Декрет</option>
+					<option value="Домогосподар/-ка">Домогосподар/-ка</option>
+					<option value="Інвалід">Інвалід</option>
+					<option value="Не працюю">Не працюю</option>
+				</select>
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_target" class="form__label required">Мета</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select id="orders_target" name="orders[target]" required="required" class="select">
+					<option value="" selected="selected">Виберіть зі списку</option>
+					<option value="Купівля техніки">Купівля техніки</option>
+					<option value="Купівля меблів">Купівля меблів</option>
+					<option value="Купівля одягу/взуття">Купівля одягу/взуття</option>
+					<option value="Погашення іншого кредиту">Погашення іншого кредиту</option>
+					<option value="Оплата комунальних послуг">Оплата комунальних послуг</option>
+					<option value="Сімейні витрати">Сімейні витрати</option>
+					<option value="Подарунок">Подарунок</option>
+					<option value="Обслуговування автомобіля">Обслуговування автомобіля</option>
+					<option value="Ремонт житла">Ремонт житла</option>
+					<option value="Розваги">Розваги</option>
+					<option value="Покупка ліків">Покупка ліків</option>
+					<option value="Відпочинок/подорож">Відпочинок/подорож</option>
+					<option value="Сплата за оренду житла">Сплата за оренду житла</option>
+					<option value="Інше">Інше</option>
+				</select>
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_phone" class="form__label required">Телефон</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_phone" name="orders[phone]" required="required" class="form__input input_medium input_phone" placeholder="+38 (XXX) XXX XX XX" />
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_email" class="form__label required">Email</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="email" id="orders_email" name="orders[email]" required="required" class="form__input" placeholder="Введіть ваш E-mail" />
+			</div>
+		</div>
+		<!--**-->
+		<input type="hidden" id="orders_period" name="orders[period]" />
+		<input type="hidden" id="orders_sum" name="orders[sum]" />
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_input">
+				<input type="checkbox" class="form__checkbox" id="orders_checkbox" name="orders[checkbox]" required="required" />
+				<label for="orders_checkbox" class="checkbox__label required">Цим я даю <a href="#">Згоду</a> на збір та обробку моїх персональних даних, перевірку моїх даних у бюро кредитних історій та погоджуюся з <a href="#">Політикою конфіденційності</a></label>
+			</div>
+		</div>
+		<input type="hidden" id="orders__token" name="orders[_token]" value="IDtJK8fKHktwZwFdffGRecy2OxWjUdDEP_L7-ugTql4" />
+        <!--**-->
+        <div class="form__row">
+			<div class="form__cell cell_input">
+            	<button class="form__button">Продовжити</button>
+			</div>
+		</div>
+		<!--**-->
+		<span class="form__result">Форма отправлена</span>
+		<span class="form__result result_err">Упс ошибка</span>
+        <!--**-->
+    </div>
+	<!--***-->
+</div>
+<!--/MIDDLE-->
+
+<!--FOOTER-->
+<footer class="site-footer">
+    <!--***-->
+    <nav class="footer__nav">
+		<ul class="footer__menu">
+			<li><a href="#">Про банк</a></li>
+			<li><a href="#">Вимоги до позичальника</a></li>
+			<li><a href="#">Як оформити кредит</a></li>
+			<li><a href="#">Як погасити кредит</a></li>
+		</ul>
+	</nav>
+    <!--***-->
+    <div class="footer__copyrights">
+    	<!--**-->
+		<p>&copy; 2019 Публічне Акціонерне Товариство «Банк «Кліринговий Дім»</p>
+        <!--**-->
+		<p class="note">Ліцензія НБУ №171 від 13.10.2011</p>
+        <!--**-->
+	</div>
+    <!--***-->
+</footer>
+<!--/FOOTER-->
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/jquery.maskedinput.js"></script>
+<script src="js/circles.min.js"></script>
+<script src="js/functions.js"></script>
+
+</body>
+</html>
