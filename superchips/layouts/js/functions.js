@@ -31,6 +31,7 @@ $(function () {
 
 $( function() {
 	$(".select").selectmenu();
+	$( ".content__tabs" ).tabs();
 	
 	$( "#slider-weight" ).slider({
 		range: "min",

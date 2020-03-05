@@ -1665,7 +1665,7 @@ li.tab-item:before{
 }
 .tab-item.active{
 }
-.tab-item.active a, .tab-item a:hover{
+.tab-item.active a, .tab-item a:hover, li.ui-state-active a{
 	background: #bf0e27;
 }
 .catalog-item__description{
