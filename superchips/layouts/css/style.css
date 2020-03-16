@@ -1638,6 +1638,7 @@ ul.tabs__list{
 	margin: 20px -1px;
 	list-style: none;
 	font-size: 1.4rem;
+	border-bottom: 1px solid #bf0e27;
 }
 li.tab-item{
 	float: left;
@@ -1656,6 +1657,7 @@ li.tab-item:before{
 	color: #fff;
 	text-align: center;
 	text-decoration: none;
+	border-bottom: 1px solid #fff;
 }
 @media (max-width: 820px){
 	li.tab-item{
@@ -1667,6 +1669,7 @@ li.tab-item:before{
 }
 .tab-item.active a, .tab-item a:hover, li.ui-state-active a{
 	background: #bf0e27;
+	border-bottom: 1px solid #bf0e27;
 }
 .catalog-item__description{
 	color: #777;
