@@ -18,7 +18,6 @@ body {
   	line-height: 1.3;
   	color: #333;
 	-webkit-text-size-adjust: none;
-	font-family: 'PT Sans', sans-serif;
 }
 .wrapper {
 	overflow: hidden;
@@ -138,7 +137,7 @@ textarea:focus:-moz-placeholder {color: #fff; opacity: 1;}
 textarea:focus::-moz-placeholder {color: #fff; opacity: 1;}	
 textarea:focus:-ms-input-placeholder { color: #fff;}
 
-input[type=text], textarea, button {
+input[type=text], input[type=email], textarea, button {
 	font-family: Roboto;
 	font-size: 1.8rem;
 	-webkit-appearance: none;
@@ -312,7 +311,7 @@ input[type=checkbox]:checked + .checkbox__label.checkbox_small:before, input[typ
 }
 .form__button:hover, .button:hover {
 	color: #fff;
-	background: #2f95ff;
+	background: #e77876;
 }
 
 .cell_slider {
@@ -1106,6 +1105,15 @@ input[type=text].slider__input {
 ---------------------------------------------
 --------------------------------------------- */
 
+.credits-banner {
+	padding: 0 0 15px 0;
+	margin: 17px 0 0 0;
+	text-align: center;
+}
+.credit-banner img {
+	max-width: 100%;
+}
+
 .calculator {
 }
 .calculator_credit {
@@ -1503,12 +1511,12 @@ a.credit-info__link:before {
 	width: 6px;
 	height: 6px;
 	transform: rotate(45deg);
-	border-top: 2px solid #5dab3e;
-	border-right: 2px solid #5dab3e;
+	border-top: 2px solid #f3901d;
+	border-right: 2px solid #f3901d;
 }
 .credit-info__link:hover, .credit-info__link.active {
-	border-color: #ff0000;
-	color: #ff0000;
+	border-color: #e77876;
+	color: #e77876;
 }
 .credit-info__item:first-child .credit-info__link {
 	left: 0px;
