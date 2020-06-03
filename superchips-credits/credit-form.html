@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#03727e">
+<title>Speedline &mdash; Кредит</title>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!--HEADER-->
+<header class="site-header">
+	<!--***-->
+    <div class="logo"><a href="#"><img src="img/logo.png" alt=""></a></div>
+    <!--***-->
+   	<h1 class="page-title">Оформлення заявки на кредит</h1>
+    <!--***-->
+</header>
+<!--/HEADER-->
+
+<!--MIDDLE-->
+<div class="site-content white">
+    <!--***-->
+    <div class="form">
+		<!--**-->
+    	<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_name" class="form__label required">Ім&#039;я</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_name" name="orders[name]" required="required" class="form__input" placeholder="Введіть ваше ім’я" />
+			</div>
+		</div>
+        <!--**-->
+        <div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_surname" class="form__label required">Прізвище</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_surname" name="orders[surname]" required="required" class="form__input" placeholder="Введіть ваше прізвище" />
+			</div>
+		</div>
+        <!--**-->
+        <div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_middlename" class="form__label required">По-батькові</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_middlename" name="orders[middlename]" required="required" class="form__input" placeholder="Введіть ваше по-батькові" />
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+            	<label class="form__label">Дата народження</label>
+			</div>
+			<div class="form__cell cell_input cell_date">
+            	<input class="form__input input_day" type="text" required="required" placeholder="День">
+				<select class="form__select select_month select" required="required">
+					<option>Місяць</option>
+					<option>Січень</option>
+					<option>Лютий</option>
+					<option>Березень</option>
+					<option>Квітень</option>
+					<option>Ьравень</option>
+					<option>Червень</option>
+					<option>Липень</option>
+					<option>Серпень</option>
+					<option>Вересень</option>
+					<option>Жовтень</option>
+					<option>Листопад</option>
+					<option>Грудень</option>
+				</select>
+				<input class="form__input input_year" type="text" required="required" placeholder="Год">
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row row_err">
+			<div class="form__cell cell_label">
+				<label for="orders_ipn" class="form__label required">ІПН</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_ipn" name="orders[ipn]" required="required" class="form__input" placeholder="Введіть ваш ІПН" />
+				<span class="form__note">Перевірте правильність введення</span>
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_place" class="form__label required">Місце</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_place" name="orders[place]" required="required" class="form__input" placeholder="Введіть місце" />
+			</div>
+		</div>
+		<!--**-->
+        <div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_phone" class="form__label required">Телефон</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="orders_phone" name="orders[phone]" required="required" class="form__input input_medium input_phone" placeholder="+38 (XXX) XXX XX XX" />
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_email" class="form__label required">Email</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="email" id="orders_email" name="orders[email]" required="required" class="form__input" placeholder="Введіть ваш E-mail" />
+			</div>
+		</div>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_place" class="form__label required">Сума, грн</label>
+			</div>
+			<div class="form__cell cell_input">
+				<input type="text" id="" name="" required="required" class="form__input input_medium" placeholder="0" />
+			</div>
+		</div>
+		<!--**-->
+		<input type="hidden" id="orders_period" name="orders[period]" />
+		<input type="hidden" id="orders_sum" name="orders[sum]" />
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_input">
+				<input type="checkbox" class="form__checkbox" id="orders_checkbox" name="orders[checkbox]" required="required" />
+				<label for="orders_checkbox" class="checkbox__label required">Цим я даю <a href="#">Згоду</a> на збір та обробку моїх персональних даних, перевірку моїх даних у бюро кредитних історій та погоджуюся з <a href="#">Політикою конфіденційності</a></label>
+			</div>
+		</div>
+		<input type="hidden" id="orders__token" name="orders[_token]" value="IDtJK8fKHktwZwFdffGRecy2OxWjUdDEP_L7-ugTql4" />
+        <!--**-->
+        <div class="form__row">
+			<div class="form__cell cell_input">
+            	<button class="form__button">Продовжити</button>
+			</div>
+		</div>
+		<!--**-->
+		<span class="form__result">Форма отправлена</span>
+		<span class="form__result result_err">Упс ошибка</span>
+    </div>
+	<!--***-->
+</div>
+<!--/MIDDLE-->
+
+<!--FOOTER-->
+<footer class="site-footer">
+	<!--***-->
+	<div class="logo"><a href="#"><img src="img/logo.png" alt=""></a></div>
+    <!--***-->
+	<div class="footer__copyrights">
+    	<!--**-->
+		<p>© 2020 ACBA. Всі права захищені</p>
+        <!--**-->
+		<p class="note">Компанія АСВА є офіційним дилером і вчиняє як оптові, так і роздрібні поставки автошин на території України з 1996 року.</p>
+        <!--**-->
+	</div>
+    <!--**-->
+</footer>
+<!--/FOOTER-->
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/remodal.min.js"></script>
+<script src="js/jquery.maskedinput.js"></script>
+<script src="js/functions.js"></script>
+
+</body>
+</html>
