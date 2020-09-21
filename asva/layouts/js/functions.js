@@ -24,6 +24,9 @@ $(function () {
 
 $( function() {
 	$(".select").selectmenu();
+	$(".form__select").selectmenu();
+	$( ".content__tabs" ).tabs();
+	$( ".tabs" ).tabs();
 		
 	$( "#slider-firstpay" ).slider({
 		range: "min",
@@ -51,7 +54,31 @@ $( function() {
 	
 });
 
+jQuery(document).ready(function($) {
+	$('a.quantity-form__minus').click(function () {
+    	var $input = $(this).parent().find('input');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+	});
+    $('a.quantity-form__plus').click(function () {
+    	var $input = $(this).parent().find('input');
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
+	});
+});
 
+$(document).ready(function() { 
+	$('.radio_delivery').click(function() { 
+    	var inputValue = $(this).attr("value"); 
+        var targetBox = $("." + inputValue); 
+        $(".sub-form").not(targetBox).hide(); 
+		$(targetBox).show(); 
+    }); 
+}); 
 
 $(document).ready(function(){
 	$('.credit-info__link').click(function(){
