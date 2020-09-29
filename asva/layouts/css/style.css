@@ -1949,6 +1949,17 @@ td.order-td__name{}
 	text-decoration: underline;
 	color: #81c441;
 }
+a.dashed-link{
+	border-bottom: 1px dashed #000;
+	display: inline-block;
+	line-height: 1.1;
+	margin: 0 0 3px 0;
+	text-decoration: none;
+}
+a.dashed-link:hover{
+	border-bottom-color: #81c441;
+	text-decoration: none;
+}
 .cart-table__note{
 	display: block;
 	color: #777;
@@ -2484,11 +2495,27 @@ html.remodal-is-locked {
 	
 }
 .modal-content {
+	padding: 0;
+	margin:  0px 0 15px 0;
+}
+.modal-content.short {
+	max-height: 300px;
+	overflow-y: auto;
 }
 .modal-footer {
 	border-top: 1px solid #ccc;
-	padding: 35px 0 0 0;
+	padding: 25px 0 0 0;
 	overflow: hidden;
+}
+.modal-footer__row {
+	margin-bottom:  30px;
+}
+.modal-footer__buttons {
+	text-align: center;
+}
+.modal-footer__buttons .form__button {
+	float: none;
+	margin: 0 10px 10px 10px;
 }
 .continue-button {
 	float: left;
@@ -2524,5 +2551,9 @@ html.remodal-is-locked {
 	.modal--title {
 		font-size: 2.2rem;
 		padding: 0 0 10px 0;
+	}
+	.modal-footer__buttons .form__button {
+		width: 100%;
+		margin: 0 0 10px 0;
 	}
 }
