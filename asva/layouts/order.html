@@ -31,6 +31,8 @@
 <div class="site-content white">
    <!--CONTENT-->
     <div class="content">
+        <span class="form__result">Форма отправлена</span>
+		<span class="form__result result_err">Упс ошибка</span>
 		<!--order-->
 		<div class="order">
 			<!--order steps-->
@@ -50,7 +52,8 @@
 							<div class="tab-content" id="tab-1">
 								<div class="form form_small">
 									<div class="form__row">
-										<input type="text" class="form__input" placeholder="Имя и фамилия">
+										<input type="text" class="form__input input_error" placeholder="Имя и фамилия" value="Олег">
+                                        <span class="form__note note_error">Ошибка тут!</span>
 									</div>                                        
 									<div class="form__row">
 										<input type="text" class="form__input" placeholder="Город">
@@ -338,7 +341,8 @@
 					</table>
 					<div class="order-buttons">
 						<input type="checkbox" class="form__checkbox" id="check_conditions_1" />
-						<label for="check_conditions_1" class="checkbox__label">Согласен с условиями передачи данных</label>
+						<label for="check_conditions_1" class="checkbox__label input_error">Согласен с условиями передачи данных<span class="form__note note_error">Ошибка тут!</span></label>
+                        
 						<input type="checkbox" class="form__checkbox" id="check_conditions_2" />
 						<label for="check_conditions_2" class="checkbox__label">Согласен с условиями передачи данных</label>
 					</div>

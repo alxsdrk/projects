@@ -204,6 +204,10 @@ input[type=submit], button {
 	padding: 0 15px;
 	border: 1px solid #8e8e8e;
 }
+.input_error {
+    color: #d93d3d;
+    border-color: #d93d3d;
+}
 .form__radio, .form__checkbox {
 	position: absolute;
 	left: -9999px;	
@@ -269,6 +273,9 @@ input[type=radio]:checked + .radio__label:after {
 	width: 22px;
 	height: 22px;
 	border: 1px solid #8e8e8e;
+}
+.checkbox__label.input_error:before {
+    border-color: #d93d3d;
 }
 .checkbox_small {
 	padding-left: 25px;
@@ -420,6 +427,8 @@ input[type=text].slider__input {
 	line-height: 1;
 	min-width: 80px;
 	width: 100%;
+    max-width: 320px;
+    overflow: hidden;
 	color: #888;
 	background: #fff;
 	display: inline-block;
@@ -566,9 +575,12 @@ input[type=text].slider__input {
 	font-size:  1.4rem;
 	font-style: italic;
 }
+.note_error {
+    color: #d93d3d;
+}
 .form__result {
 	display: block;
-	margin: 30px 0;
+	margin: 0 0 10px 0;
 	padding: 10px 20px;
 	font-size: 1.8rem;
 	text-align: center;
@@ -1937,7 +1949,9 @@ td.order-td__photo{
 	padding-left: 0px;
 	padding-right: 10px;
 }
-.order-td__photo img{}
+.order-td__photo img{
+    max-width: 60px;
+}
 td.order-td__name{}
 .order-td__name a{
 	font-size: 1.8rem;
@@ -2227,6 +2241,35 @@ input.quantity-form__input {
 		width: 100%;
 		margin: 0 0 15px 0;
 	}
+}
+
+/* = info */
+.info{
+    text-align: center;
+    margin: 50px 0 0 0;
+}
+.content__ico{
+    margin: 0 0 65px 0;
+}
+.content__ico img{
+}
+.info__title{
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+.info__buttons{
+    margin:  100px 0 0 0;
+}
+
+@media (max-width: 920px){
+    .content__ico{
+        margin: 0 0 25px 0;
+    }
+    .info__buttons{
+        margin:  50px 0 0 0;
+    }
 }
 
 /* = Modal
