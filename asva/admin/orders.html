@@ -1,0 +1,535 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#03727e">
+<title>ASVA &mdash; Заказы</title>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!--HEADER-->
+<header class="site-header">
+	<!--***-->
+    <div class="logo"><a href="#"><img src="img/logo.png" alt=""></a></div>
+    <!--***-->
+	<div class="header__user">
+		<span class="user__name">Привет, <strong>Иванов С.С.</strong>!</span>
+		<a href="" class="user__logout"></a>
+	</div>
+    <!--***-->
+</header>
+<!--/HEADER-->
+	
+<!--NAVIGATION-->
+<nav class="site-nav">
+	<ul>
+		<li class="site-nav__item active"><a href="#">Заказы<i class="counter">29</i></a></li>
+		<li class="site-nav__item"><a href="#">Клиенты</a></li>
+		<li class="site-nav__item"><a href="#">Банки</a></li>
+		<li class="site-nav__item"><a href="#">Новая почта</a></li>
+		<li class="site-nav__item"><a href="#">Настройки</a></li>
+	</ul>
+	<a href="#" class="add-order">Добавить заказ</a>
+</nav>
+<!--/NAVIGATION-->
+
+<!--FILTERS-->
+<div class="filters">
+    <!--***-->
+    <div class="filters__cell">
+		<input type="text" class="form__input input_search" placeholder="Номер, покупатель, товар...">
+	</div>
+    <!--***-->
+	<div class="filters__cell">
+		<div class="filters__period filters_dates">
+			<input type="text" class="form__input input_date" placeholder="00.00.00">
+            <i class="dash">&mdash;</i>
+			<input type="text" class="form__input input_date" placeholder="00.00.00">
+		</div>
+	</div>
+    <!--***-->
+    <div class="filters__cell">
+		<div class="filters__period filters_price">
+			<input type="text" class="form__input input_price" placeholder="" value="0">
+            <i class="dash">&mdash;</i>
+			<input type="text" class="form__input input_price" placeholder="" value="99999">
+            <i class="filters__unit">грн.</i>
+		</div>
+	</div>
+    <!--***-->
+    <div class="filters__cell">
+        <select class="form__select">
+            <option>Способ оплаты</option>
+            <option>Наличными</option>
+            <option>Картой</option>
+            <option>Безналичный расчет</option>
+            <option>Кредит Альфа 0%</option>
+            <option>Кредит Альфа карта</option>
+        </select>
+    </div>
+    <!--***-->
+    <div class="filters__cell">
+        <select class="form__select">
+            <option>Стастус оплаты</option>
+            <option>Оплачено наличными</option>
+            <option>Не оплачено</option>
+            <option>Отправлена в банк</option>
+            <option>Доставлено на почту</option>
+            <option>Одобрено банком</option>
+            <option>Договор подписан банком</option>
+        </select>
+    </div>
+    <!--***-->
+    <div class="filters__cell">
+        <select class="form__select">
+            <option>Способ доставки</option>
+            <option>Самовывоз</option>
+            <option>Новая почта</option>
+            <option>Диливери</option>
+
+        </select>
+    </div>
+    <!--***-->
+
+    <div class="filters__cell">
+        <select class="form__select">
+            <option>Статус доставки</option>
+            <option>Доставлено</option>
+            <option>в пути</option>
+        </select>
+    </div>
+    <!--***-->
+    <div class="filters__cell cell_buttons">
+        <input type="submit" class="form__button button_search" value="Поиск">
+    </div>
+    <!--***-->
+</div>
+<!--/FILTERS-->
+	
+<!--MIDDLE-->
+<div class="site-content">
+	<!--***-->
+	<table class="table__order">
+        <thead>
+            <tr>
+                <th class="order-th_id"><a href="#" class="th__sort">№ заявки</a><br><a href="#" class="th__sort">Дата</a></th>
+                <th class="order-th_customer">Покупатель</th>
+                <th class="order-th_product">Товар</th>
+                <th class="order-th_cost">Стоимость, грн.</th>
+                <th class="order-th_totalcost"><a href="#" class="th__sort">Общая стоимость, грн.</a></th>
+                <th class="order-th_paymentmethod">Способ оплаты</th>
+                <th class="order-th_paymentstate">Статус оплаты</th>
+                <th class="order-th_deliverymethod">Способ доставки</th>
+                <th class="order-th_deliverystatus">Статус доставки</th>
+                <th class="order-th_manager">Статус доставки</th>
+                <th class="order-th_buttons"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--**-->
+            <tr>
+                <td class="order-td_id">
+                    B-347546293423
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_customer">
+                    <span class="customer__lastname">Констатинопольский</span>
+                    Константин Константинович
+                    <span class="customer__phone">+380956758963</span>
+                </td>
+                <td class="order-td_product">
+                    <a href="#" class="product__title">185/65 R15 Michelin X-Ice North 4 92T XL шип</a>
+                    <span class="product__vendorcode">Артикул: 125897</span>
+                    <div class="order-td__quantity">
+                        <input type="text" value="0" class="form__input input_short">
+                        <span class="form__units">шт.</span>
+                    </div>
+                </td>
+                <td class="order-td_cost">32 000</td>
+                <td class="order-td_totalcost">32 762</td>
+                <td class="order-td_paymentmethod">
+                    <select class="form__select">
+                        <option>Наличными</option>
+						<option>Наличными</option>
+						<option>Наличными</option>
+                    </select>
+                </td>
+                <td class="order-td_paymentstate">
+                     <select class="form__select">
+                        <option>Стастус оплаты</option>
+						<option class="select-color_1">Оплачено наличными</option>
+						<option class="select-color_2">Не оплачено</option>
+						<option class="select-color_3">Отправлена в банк</option>
+						<option class="select-color_4">Доставлено на почту</option>
+						<option class="select-color_5">Одобрено банком</option>
+						<option class="select-color_6">Договор подписан банком</option>
+                    </select>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_deliverymethod">
+                     <select class="form__select">
+                        <option>Новая почта</option>
+						<option>Новая почта</option>
+						<option>Новая почта</option>
+                    </select>
+                    <span class="td__note">Киев отделение №97</span>
+                </td>
+                <td class="order-td_deliverystatus">
+                     <select class="form__select">
+                        <option>Доставлено</option>
+						<option>Доставлено</option>
+						<option>Доставлено</option>
+                    </select>
+                    <span class="td__deliverynum">ТТН: 1234567891011</span>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_manager">Иванов&nbsp;С.С</td>
+                <td class="order-td_buttons">
+                    <a href="#" class="link-button link-button_save" title="Сохранить"></a>
+                    <a href="#" class="link-button link-button_edit" title="Редактировать"></a>
+                    <a href="#" class="link-button link-button_delete" title="Удалить"></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="order-td_service"></td>
+                <td class="order-td_service">
+                    Шиномонтаж
+                    <span class="td__note">Дополнительная услуга</span>
+                </td>
+                <td class="order-td_service">504</td>
+                <td colspan="7" class="td__service_service"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="order-td_service"></td>
+                <td class="order-td_service">
+                   Комиссия
+                    <span class="td__note">Оплата портмоне</span>
+                </td>
+                <td class="order-td_service">258</td>
+                <td colspan="7" class="order-td_service"></td>
+            </tr>
+            <!--**-->
+            <tr>
+                <td class="order-td_id colorful">
+                    B-347546293423
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_customer colorful">
+                    <span class="customer__lastname">Констатинопольский</span>
+                    Константин Константинович
+                    <span class="customer__phone">+380956758963</span>
+                </td>
+                <td class="order-td_product colorful">
+                    <a href="#" class="product__title">185/65 R15 Michelin X-Ice North 4 92T XL шип</a>
+                    <span class="product__vendorcode">Артикул: 125897</span>
+                    <div class="order-td__quantity">
+                        <input type="text" value="0" class="form__input input_short">
+                        <span class="form__units">шт.</span>
+                    </div>
+                </td>
+                <td class="order-td_cost colorful">32 000</td>
+                <td class="order-td_totalcost colorful">32 762</td>
+                <td class="order-td_paymentmethod colorful">
+                    <select class="form__select">
+                        <option>Наличными</option>
+						<option>Наличными</option>
+						<option>Наличными</option>
+                    </select>
+                </td>
+                <td class="order-td_paymentstate colorful">
+                     <select class="form__select">
+                        <option>Стастус оплаты</option>
+						<option class="select-color_1">Оплачено наличными</option>
+						<option class="select-color_2">Не оплачено</option>
+						<option class="select-color_3">Отправлена в банк</option>
+						<option class="select-color_4">Доставлено на почту</option>
+						<option class="select-color_5">Одобрено банком</option>
+						<option class="select-color_6">Договор подписан банком</option>
+                    </select>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_deliverymethod colorful">
+                     <select class="form__select">
+                        <option>Новая почта</option>
+						<option>Новая почта</option>
+						<option>Новая почта</option>
+                    </select>
+                    <span class="td__note">Киев отделение №97</span>
+                </td>
+                <td class="order-td_deliverystatus colorful">
+                     <select class="form__select">
+                        <option>Доставлено</option>
+						<option>Доставлено</option>
+						<option>Доставлено</option>
+                    </select>
+                    <span class="td__deliverynum">ТТН: 1234567891011</span>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_manager colorful">Иванов&nbsp;С.С</td>
+                <td class="order-td_buttons colorful">
+                    <a href="#" class="link-button link-button_save active" title="Сохранить"></a>
+                    <a href="#" class="link-button link-button_edit" title="Редактировать"></a>
+                    <a href="#" class="link-button link-button_delete" title="Удалить"></a>
+                </td>
+            </tr>
+            <!--**-->
+             <tr>
+                <td class="order-td_id">
+                    B-347546293423
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_customer">
+                    <span class="customer__lastname">Констатинопольский</span>
+                    Константин Константинович
+                    <span class="customer__phone">+380956758963</span>
+                </td>
+                <td class="order-td_product">
+                    <a href="#" class="product__title">185/65 R15 Michelin X-Ice North 4 92T XL шип</a>
+                    <span class="product__vendorcode">Артикул: 125897</span>
+                    <div class="order-td__quantity">
+                        <input type="text" value="0" class="form__input input_short">
+                        <span class="form__units">шт.</span>
+                    </div>
+                </td>
+                <td class="order-td_cost">32 000</td>
+                <td class="order-td_totalcost">32 762</td>
+                <td class="order-td_paymentmethod">
+                    <select class="form__select">
+                        <option>Наличными</option>
+						<option>Наличными</option>
+						<option>Наличными</option>
+                    </select>
+                </td>
+                <td class="order-td_paymentstate">
+                     <select class="form__select">
+                        <option>Оплачено наличными</option>
+						<option>Оплачено наличными</option>
+						<option>Оплачено наличными</option>
+                    </select>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_deliverymethod">
+                     <select class="form__select">
+                        <option>Новая почта</option>
+						<option>Новая почта</option>
+						<option>Новая почта</option>
+                    </select>
+                    <span class="td__note">Киев отделение №97</span>
+                </td>
+                <td class="order-td_deliverystatus">
+                     <select class="form__select">
+                        <option>Доставлено</option>
+						<option>Доставлено</option>
+						<option>Доставлено</option>
+                    </select>
+                    <span class="td__deliverynum">ТТН: 1234567891011</span>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_manager">Иванов&nbsp;С.С</td>
+                <td class="order-td_buttons">
+                   <a href="#" class="link-button link-button_save" title="Сохранить"></a>
+                    <a href="#" class="link-button link-button_edit" title="Редактировать"></a>
+                    <a href="#" class="link-button link-button_delete" title="Удалить"></a>
+                </td>
+            </tr>
+            <!--**-->
+			<tr>
+                <td class="order-td_id colorful">
+                    B-347546293423
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_customer colorful">
+                    <span class="customer__lastname">Констатинопольский</span>
+                    Константин Константинович
+                    <span class="customer__phone">+380956758963</span>
+                </td>
+                <td class="order-td_product colorful">
+                    <a href="#" class="product__title">185/65 R15 Michelin X-Ice North 4 92T XL шип</a>
+                    <span class="product__vendorcode">Артикул: 125897</span>
+                    <div class="order-td__quantity">
+                        <input type="text" value="0" class="form__input input_short">
+                        <span class="form__units">шт.</span>
+                    </div>
+                </td>
+                <td class="order-td_cost colorful">32 000</td>
+                <td class="order-td_totalcost colorful">32 762</td>
+                <td class="order-td_paymentmethod colorful">
+                    <select class="form__select">
+                        <option>Наличными</option>
+						<option>Наличными</option>
+						<option>Наличными</option>
+                    </select>
+                </td>
+                <td class="order-td_paymentstate colorful">
+                     <select class="form__select">
+                        <option>Оплачено наличными</option>
+						<option>Оплачено наличными</option>
+						<option>Оплачено наличными</option>
+                    </select>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_deliverymethod colorful">
+                     <select class="form__select">
+                        <option>Новая почта</option>
+						<option>Новая почта</option>
+						<option>Новая почта</option>
+                    </select>
+                    <span class="td__note">Киев отделение №97</span>
+                </td>
+                <td class="order-td_deliverystatus colorful">
+                     <select class="form__select">
+                        <option>Доставлено</option>
+						<option>Доставлено</option>
+						<option>Доставлено</option>
+                    </select>
+                    <span class="td__deliverynum">ТТН: 1234567891011</span>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_manager colorful">Иванов&nbsp;С.С</td>
+                <td class="order-td_buttons colorful">
+                    <a href="#" class="link-button link-button_save" title="Сохранить"></a>
+                    <a href="#" class="link-button link-button_edit" title="Редактировать"></a>
+                    <a href="#" class="link-button link-button_delete" title="Удалить"></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="order-td_service colorful"></td>
+                <td class="order-td_service colorful">
+                    Шиномонтаж
+                    <span class="td__note">Дополнительная услуга</span>
+                </td>
+                <td class="order-td_service colorful">504</td>
+                <td colspan="7" class="td__service_service colorful"></td>
+            </tr>
+            <!--**-->
+			<tr>
+                <td class="order-td_id">
+                    B-347546293423
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_customer">
+                    <span class="customer__lastname">Констатинопольский</span>
+                    Константин Константинович
+                    <span class="customer__phone">+380956758963</span>
+                </td>
+                <td class="order-td_product">
+                    <a href="#" class="product__title">185/65 R15 Michelin X-Ice North 4 92T XL шип</a>
+                    <span class="product__vendorcode">Артикул: 125897</span>
+                    <div class="order-td__quantity">
+                        <input type="text" value="0" class="form__input input_short">
+                        <span class="form__units">шт.</span>
+                    </div>
+                </td>
+                <td class="order-td_cost">32 000</td>
+                <td class="order-td_totalcost">32 762</td>
+                <td class="order-td_paymentmethod">
+                    <select class="form__select">
+                        <option>Наличными</option>
+						<option>Наличными</option>
+						<option>Наличными</option>
+                    </select>
+                </td>
+                <td class="order-td_paymentstate">
+                     <select class="form__select">
+                        <option>Оплачено наличными</option>
+						<option>Оплачено наличными</option>
+						<option>Оплачено наличными</option>
+                    </select>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_deliverymethod">
+                     <select class="form__select">
+                        <option>Новая почта</option>
+						<option>Новая почта</option>
+						<option>Новая почта</option>
+                    </select>
+                    <span class="td__note">Киев отделение №97</span>
+                </td>
+                <td class="order-td_deliverystatus">
+                     <select class="form__select">
+                        <option>Доставлено</option>
+						<option>Доставлено</option>
+						<option>Доставлено</option>
+                    </select>
+                    <span class="td__deliverynum">ТТН: 1234567891011</span>
+                    <span class="td__note">08.12.20 12:36</span>
+                </td>
+                <td class="order-td_manager">Иванов&nbsp;С.С</td>
+                <td class="order-td_buttons">
+                    <a href="#" class="link-button link-button_save" title="Сохранить"></a>
+                    <a href="#" class="link-button link-button_edit" title="Редактировать"></a>
+                    <a href="#" class="link-button link-button_delete" title="Удалить"></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="order-td_service"></td>
+                <td class="order-td_service">
+                    Шиномонтаж
+                    <span class="td__note">Дополнительная услуга</span>
+                </td>
+                <td class="order-td_service">504</td>
+                <td colspan="7" class="td__service_service"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="order-td_service"></td>
+                <td class="order-td_service">
+                   Комиссия
+                    <span class="td__note">Оплата портмоне</span>
+                </td>
+                <td class="order-td_service">258</td>
+                <td colspan="7" class="order-td_service"></td>
+            </tr>
+            <!--**-->
+        </tbody>
+    </table>
+	<!--***-->
+	<div class="pages-nav">
+		<a href="#" class="pages-nav__link pages-nav_arr">&larr;</a>
+		<a href="#" class="pages-nav__link">1</a>
+		<span class="pages-nav__current">2</span>
+		<a href="#" class="pages-nav__link">3</a>
+		<span class="pages-nav__skip">...</span>
+		<a href="#" class="pages-nav__link">10</a>
+		<a href="#" class="pages-nav__link pages-nav_arr">&rarr;</a>
+	</div>
+	<!--***-->
+</div>
+<!--/MIDDLE-->
+
+<!--FOOTER-->
+<footer class="site-footer">
+	<!--***-->
+	<div class="logo"><a href="#"><img src="img/logo.png" alt=""></a></div>
+    <!--***-->
+	<div class="footer__copyrights">
+    	<!--**-->
+		<p>© 2020 ACBA. Всі права захищені</p>
+        <!--**-->
+		<p class="note">Компанія АСВА є офіційним дилером і вчиняє як оптові, так і роздрібні поставки автошин на території України з 1996 року.</p>
+        <!--**-->
+	</div>
+    <!--***-->
+</footer>
+<!--/FOOTER-->
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/remodal.min.js"></script>
+<script src="js/jquery.maskedinput.js"></script>
+<script src="js/functions.js"></script>
+
+</body>
+</html>

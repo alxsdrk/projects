@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#03727e">
+<title>ASVA &mdash; Изменение заказа</title>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,600,600i,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!--HEADER-->
+<header class="site-header">
+	<!--***-->
+    <div class="logo"><a href="#"><img src="img/logo.png" alt=""></a></div>
+    <!--***-->
+	<div class="header__user">
+		<span class="user__name">Привет, <strong>Иванов С.С.</strong>!</span>
+		<a href="" class="user__logout"></a>
+	</div>
+    <!--***-->
+</header>
+<!--/HEADER-->
+
+<!--NAVIGATION-->
+<nav class="site-nav">
+	<ul>
+		<li class="site-nav__item active"><a href="#">Заказы<i class="counter">29</i></a></li>
+		<li class="site-nav__item"><a href="#">Клиенты</a></li>
+		<li class="site-nav__item"><a href="#">Банки</a></li>
+		<li class="site-nav__item"><a href="#">Новая почта</a></li>
+		<li class="site-nav__item"><a href="#">Настройки</a></li>
+	</ul>
+	<a href="#" class="add-order">Добавить заказ</a>
+</nav>
+<!--/NAVIGATION-->
+	
+<!--MIDDLE-->
+<div class="site-content">
+	<!--***-->
+	<div class="site-content__head">
+		<div class="breadcrumbs"><a href="#">Заказы</a></div>
+		<h1 class="content__title">Изменение заказа №43345932</h1>
+	</div>
+    <!--***-->
+    <div class="form">
+		<!--**-->
+    	<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_id" class="form__label required">ID</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_id" name="orders[id]" required="required" class="form__input" placeholder="Редактируемый текст" />
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_date" class="form__label required">Дата</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_date" name="orders[date]" required="required" class="form__input" placeholder="дд.мм.гг" />
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_name" class="form__label required">Имя</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_name" name="orders[name]" required="required" class="form__input" placeholder="Редактируемый текст" />
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_middlename" class="form__label required">Отчество</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_middlename" name="orders[middlename]" required="required" class="form__input" placeholder="Редактируемый текст" />
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row row_error">
+			<div class="form__cell cell_label">
+				<label for="orders_name" class="form__label required">Телефон</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_phone" name="orders[phone]" required="required" class="form__input" placeholder="Редактируемый текст" />
+                <span class="form__note note_error">Ошибка тут!</span>
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_vendorcode" class="form__label required">Артикул</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_vendorcode" name="orders[vendorcode]" required="required" class="form__input" placeholder="Редактируемый текст" />
+				<span class="form__note">Какое-то описание</span>
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_amount" class="form__label required">Количество</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_amount" name="orders[amount]" required="required" class="form__input input_short" placeholder="0" />
+				<span class="form__units">шт.</span>
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_costunit" class="form__label required">Стоимость 1 единицы</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_costunit" name="orders[costunit]" required="required" class="form__input input_short" placeholder="0" />
+				<span class="form__units">грн.</span>
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_totalcost" class="form__label required">Общая стоимость</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_totalcost" name="orders[totalcost]" required="required" class="form__input input_short" placeholder="0" />
+				<span class="form__units">грн.</span>
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_add">
+            	<a href="#" class="form__add">Добавить товар</a>
+			</div>
+		</div>
+        <!--**-->
+		<fieldset class="form__set set__color">
+			<legend class="form__legend">Дополнительные услуги</legend>
+			<!--*-->
+			<div class="form__row">
+				<div class="form__cell cell_label">
+					<label for="orders_service" class="form__label required">Шиномонтаж</label>
+				</div>
+				<div class="form__cell cell_input">
+					<input type="text" id="orders_service" name="orders[service]" required="required" class="form__input" placeholder="Редактируемый текст" />
+					<span class="form__note">Какое-то описание</span>
+				</div>
+			</div>
+			<!--*-->
+			<div class="form__row">
+				<div class="form__cell cell_label">
+					<label for="orders_servicecost" class="form__label required">Стоимость</label>
+				</div>
+				<div class="form__cell cell_input">
+					<input type="text" id="orders_servicecost" name="orders[servicecost]" required="required" class="form__input input_short" placeholder="0" />
+					<span class="form__units">грн.</span>
+				</div>
+			</div>
+			<!--*-->
+			<div class="form__row">
+				<div class="form__cell cell_add">
+					<a href="#" class="form__add">Добавить услугу</a>
+				</div>
+			</div>
+			<!--*-->
+		</fieldset>
+		<!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_ordercost" class="form__label required">Общая стоимость заказа</label>
+			</div>
+			<div class="form__cell cell_input">
+            	<input type="text" id="orders_ordercost" name="orders[ordercost]" required="required" class="form__input input_short" placeholder="0" />
+				<span class="form__units">грн.</span>
+			</div>
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_paymentmethod" class="form__label required">Способ оплаты</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select class="form__select" id="orders_paymentmethod">
+					<option>Выберите из списка</option>
+					<option>Кредит Альфа карта</option>
+				</select>
+			</div>	
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_paymentstate" class="form__label required">Статус оплаты</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select class="form__select" id="orders_paymentstate">
+					<option>Выберите из списка</option>
+					<option>Договор подписан банком</option>
+				</select>
+			</div>	
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_deliverymethod" class="form__label required">Способ доставки</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select class="form__select" id="orders_deliverymethod">
+					<option>Выберите из списка</option>
+				</select>
+			</div>	
+		</div>
+        <!--**-->
+		<div class="form__row row_error">
+			<div class="form__cell cell_label">
+				<label for="orders_city" class="form__label required">Город</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select class="form__select" id="orders_city">
+					<option>Выберите из списка</option>
+				</select>
+                <span class="form__note note_error">Ошибка тут!</span>
+			</div>	
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_postoffice" class="form__label required">Номер отделения, адрес</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select class="form__select" id="orders_postoffice">
+					<option>Выберите из списка</option>
+				</select>
+			</div>	
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_deliverystate" class="form__label required">Статус доставки</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select class="form__select" id="orders_deliverystate">
+					<option>Выберите из списка</option>
+				</select>
+			</div>	
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_manager" class="form__label required">Менеджер</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select class="form__select" id="orders_manager">
+					<option>Выберите из списка</option>
+				</select>
+			</div>	
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_label">
+				<label for="orders_note" class="form__label required">Примечание</label>
+			</div>
+			<div class="form__cell cell_input">
+				<select class="form__select" id="orders_note">
+					<option>Выберите из списка</option>
+				</select>
+			</div>	
+		</div>
+        <!--**-->
+		<div class="form__row">
+			<div class="form__cell cell_buttons">
+				<input type="submit" class="form__button" value="Сохранить">
+				<input type="submit" class="form__button button_cancel" value="Отменить">
+				<input type="submit" class="form__button button_delete" value="Удалить">
+			</div>
+		</div>
+		<!--**-->
+		<span class="form__result">Форма отправлена</span>
+		<span class="form__result result_err">Упс ошибка</span>
+		<!--**-->
+    </div>
+	<!--***-->
+</div>
+<!--/MIDDLE-->
+
+<!--FOOTER-->
+<footer class="site-footer">
+	<!--***-->
+	<div class="logo"><a href="#"><img src="img/logo.png" alt=""></a></div>
+    <!--***-->
+	<div class="footer__copyrights">
+    	<!--**-->
+		<p>© 2020 ACBA. Всі права захищені</p>
+        <!--**-->
+		<p class="note">Компанія АСВА є офіційним дилером і вчиняє як оптові, так і роздрібні поставки автошин на території України з 1996 року.</p>
+        <!--**-->
+	</div>
+    <!--***-->
+</footer>
+<!--/FOOTER-->
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/remodal.min.js"></script>
+<script src="js/jquery.maskedinput.js"></script>
+<script src="js/functions.js"></script>
+
+</body>
+</html>
