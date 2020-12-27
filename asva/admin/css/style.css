@@ -418,7 +418,45 @@ input[type=text], input[type=email], input[type=num], input[type=password], text
     color: #888;
     margin: 5px 0 0 0;
 }
-
+.form__radio, .form__checkbox {
+	position: absolute;
+	left: -9999px;	
+}
+.checkbox__label {
+	position: relative;
+	display: block;
+	padding: 2px 0 0 25px;
+	margin: 0 0 10px 0;
+	cursor: pointer;
+}
+.checkbox__label:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 1px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #8e8e8e;
+}
+.checkbox__label.input_error:before {
+    border-color: #d93d3d;
+}
+.checkbox_small {
+	padding-left: 25px;
+}
+.checkbox_small:before {
+	width: 15px;
+	height: 15px;
+	background-size: 12px;
+}
+input[type=checkbox]:checked + .checkbox__label {
+	color: #202020;
+}
+input[type=checkbox]:checked + .checkbox__label:before {
+	background: url(../img/checked.svg) center center no-repeat;
+	background-size: 13px;
+}
 /* = error */
 
 .form__units{
@@ -428,7 +466,6 @@ input[type=text], input[type=email], input[type=num], input[type=password], text
 }
 .form__result{
     display: block;
-    margin: 0 auto;
     max-width: 35%;
     background: #eaf6f1;
     padding: 9px 15px;
@@ -453,6 +490,8 @@ input[type=text], input[type=email], input[type=num], input[type=password], text
 
 /* = ui-selectmenu */
 
+
+
 .ui-selectmenu-button {
 	font-family: Roboto;
     font-size: 1.2rem;
@@ -475,6 +514,10 @@ input[type=text], input[type=email], input[type=num], input[type=password], text
 	padding: 5px 0px 5px 0px;
 	margin: 0px 0px 0px 0px !important;
 }
+
+.table__order .ui-selectmenu-button {
+    max-width: 130px !important;
+}
 .ui-selectmenu-button span.ui-icon {
 	position: absolute;
 	z-index: 100;
@@ -487,6 +530,20 @@ input[type=text], input[type=email], input[type=num], input[type=password], text
 	border-right: 1px solid #202020;
 	transform: rotate(45deg);
 }
+.ui-selectmenu-button:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 10;
+    width: 10px;
+    height: 25px;
+    background: #fff;
+    bottom: 1px;
+    right: 0px;
+}
+.filters .ui-selectmenu-button:before, .colorful .ui-selectmenu-button:before {
+    background: #f9f9fa;
+}
 .ui-selectmenu-menu {
 	position: absolute;
 	z-index: 100 !important;
@@ -495,7 +552,6 @@ input[type=text], input[type=email], input[type=num], input[type=password], text
 	display: none;
 	background: #fff;
 	max-width: 300px;
-	
 }
 .ui-menu {
 	border: 1px solid #888;
@@ -998,3 +1054,336 @@ td.order-td_service{
     margin: 0;
 }
 .footer__copyrights .note{}
+
+
+/* = Modal
+---------------------------------------------
+--------------------------------------------- */
+
+html.remodal-is-locked {
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+.remodal,
+[data-remodal-id] {
+  display: none;
+}
+.remodal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: -5000px;
+  right: -5000px;
+  bottom: -5000px;
+  left: -5000px;
+  display: none;
+}
+.remodal-wrapper {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  overflow: auto;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+}
+.remodal-wrapper:after {
+  display: inline-block;
+  height: 100%;
+  margin-left: -0.05em;
+  content: "";
+}
+.remodal-overlay,
+.remodal-wrapper {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.remodal {
+  position: relative;
+  outline: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+.remodal-is-initialized {
+  display: inline-block;
+}
+.remodal-bg.remodal-is-opening,
+.remodal-bg.remodal-is-opened {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+.remodal-overlay {
+  background: rgba(0, 0, 0, 0.9);
+}
+.remodal-overlay.remodal-is-opening,
+.remodal-overlay.remodal-is-closing {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.remodal-overlay.remodal-is-opening {
+  -webkit-animation-name: remodal-overlay-opening-keyframes;
+  animation-name: remodal-overlay-opening-keyframes;
+}
+.remodal-overlay.remodal-is-closing {
+  -webkit-animation-name: remodal-overlay-closing-keyframes;
+  animation-name: remodal-overlay-closing-keyframes;
+}
+.remodal-wrapper {
+  padding: 10px 10px 0;
+}
+.remodal {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 25px 30px 35px 30px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  color: #2b2e38;
+  background: #fff;
+  max-width: 1080px;
+  text-align: left;
+}
+.remodal.remodal-is-opening,
+.remodal.remodal-is-closing {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.remodal.remodal-is-opening {
+  -webkit-animation-name: remodal-opening-keyframes;
+  animation-name: remodal-opening-keyframes;
+}
+
+.remodal.remodal-is-closing {
+  -webkit-animation-name: remodal-closing-keyframes;
+  animation-name: remodal-closing-keyframes;
+}
+.remodal,   
+.remodal-wrapper:after {
+  vertical-align: middle;
+}
+.remodal-close, .comments-form__close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: block;
+	overflow: visible;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+	background: #163b7a;
+	cursor: pointer;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+	text-decoration: none;
+	color: #fff;
+	border: 0;
+	font-style: normal;
+	outline: 0;
+	border-radius: 50px 50px 50px 50px;
+	-moz-border-radius: 50px 50px 50px 50px;
+	-webkit-border-radius: 50px 50px 50px 50px;
+}
+.remodal-close:hover, .remodal-close:focus, .comments-form__close:hover, .comments-form__close:focus {
+   background: #a53131;
+}
+.button_cancel:hover{
+    background: #174fae;
+}
+.button_delete:hover{
+    background: #cf3838;
+}
+.remodal-close:before, .comments-form__close:before {
+  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 20px;
+  content: "\00d7";
+  text-align: center;
+}
+
+.remodal-confirm::-moz-focus-inner,
+.remodal-cancel::-moz-focus-inner,
+.remodal-close::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+@-webkit-keyframes remodal-opening-keyframes {
+  from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+@keyframes remodal-opening-keyframes {
+  from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+@-webkit-keyframes remodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+@keyframes remodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+@-webkit-keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.lt-ie9 .remodal-overlay {
+  background: #2b2e38;
+}
+.modal-header {
+}
+.modal--title {
+	display: block;
+	font-size: 2.8rem;
+	font-weight: bold;
+	padding: 0 0 30px 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.modal--title strong {
+	color: #03727e;
+	
+}
+.modal-content {
+	padding: 0;
+	margin:  0px 0 15px 0;
+}
+.modal-content.short {
+	max-height: 300px;
+	overflow-y: auto;
+}
+.modal-footer {
+	border-top: 1px solid #ccc;
+	padding: 25px 0 0 0;
+	overflow: hidden;
+}
+.modal-footer__row {
+	margin-bottom:  30px;
+}
+.modal-footer__buttons {
+	text-align: center;
+}
+.modal-footer__buttons .form__button {
+	float: none;
+	margin: 0 10px 10px 10px;
+}
+.continue-button {
+	float: left;
+}
+.form__button {
+	float: right;
+}
+.form_normal .form__button {
+	float: none;
+}
+@media (max-width: 1100px) {
+	.remodal {
+	  padding: 25px 20px 25px 20px;
+	}
+	.modal--title {
+		font-size: 2.6rem;
+		padding: 0 0 15px 0;
+	}
+}
+@media (max-width: 800px) {
+	.remodal {
+	  padding: 20px 15px 20px 15px;
+	}
+	.modal--title {
+		font-size: 2.4rem;
+		padding: 0 0 10px 0;
+	}
+}
+@media (max-width: 640px) {
+	.remodal {
+	  padding: 20px 10px 20px 10px;
+	}
+	.modal--title {
+		font-size: 2.2rem;
+		padding: 0 0 10px 0;
+	}
+	.modal-footer__buttons .form__button {
+		width: 100%;
+		margin: 0 0 10px 0;
+	}
+}
